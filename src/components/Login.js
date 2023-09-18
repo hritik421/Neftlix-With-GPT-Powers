@@ -1,13 +1,10 @@
 import { useState, useRef } from "react"
 import Header from "./Header"
 import { ValidateData } from "../utils/AttributeValidator";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-
-    const navigate = useNavigate();
     const [IsSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
     const toggleSignInForm = () => {
@@ -26,8 +23,6 @@ const Login = () => {
                 signInWithEmailAndPassword(auth, email.current.value, password.current.value)
                 .then((userCredential) => {
                     // Signed in 
-                    const user = userCredential.user;
-                    navigate("/browse");
 
                     // ...
                 })
@@ -38,8 +33,6 @@ const Login = () => {
                 createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
             .then((userCredential) => {
                 // Signed in 
-                const user = userCredential.user;
-                navigate("/browse");
                 // ...
             })
             .catch((error) => {
@@ -49,8 +42,6 @@ const Login = () => {
      }
     
 }
-
-
     return (
         <div>
             <Header />
