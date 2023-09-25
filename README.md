@@ -28,19 +28,25 @@
 - Update store with Trailer Video Data
 - Embedded the YT video and make it autoplay and mute
 - Tailwind classes to make Main Container look awesome
-- Build Secondary Content    
+- Build Secondary Content
+- Build Movie List
+- Build Movie Card
+- TMBD image CDN url
+- Made the Browse page amazing with Tailwind CSS
+- Created custom hooks to fetch movies List
 
 # Features
+
 - Login/Sign up
-    - Sign in/ Sign up form 
-    - Redirect to browse page
+  - Sign in/ Sign up form
+  - Redirect to browse page
 - Browse (after authenctication only)
-    - Header
-    - Main Movie
-        - Trailer in Background
-        - Title & Description
-        - MovieSuggestions
-            - MovieLists * N
+  - Header
+  - Main Movie
+    - Trailer in Background
+    - Title & Description
+    - MovieSuggestions
+      - MovieLists \* N
 - NetflixGPT
-    - Search Bar
-    - Movie Suggestions
+  - Search Bar
+  - Movie Suggestions
