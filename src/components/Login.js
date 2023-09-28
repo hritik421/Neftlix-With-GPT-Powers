@@ -46,10 +46,10 @@ const Login = () => {
         <div>
             <Header />
             <div className="absolute">
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/dc1cf82d-97c9-409f-b7c8-6ac1718946d6/14a8fe85-b6f4-4c06-8eaf-eccf3276d557/IN-en-20230911-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
+                <img className="h-screen object-cover md:w-screen" src="https://assets.nflxext.com/ffe/siteui/vlv3/dc1cf82d-97c9-409f-b7c8-6ac1718946d6/14a8fe85-b6f4-4c06-8eaf-eccf3276d557/IN-en-20230911-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
                 alt="WallPaper"/>
             </div>
-            <from onSubmit= {(e)=> e.preventDefault()} className="absolute bg-black/80 w-3/12 p-10 my-32 mx-auto right-0 left-0 text-white rounded-lg">
+            <from onSubmit= {(e)=> e.preventDefault()} className="absolute bg-black/80 w-full md:w-3/12 p-10 my-32 mx-auto right-0 left-0 text-white rounded-lg">
                 <h1 className="font-bold text-3xl py-2">
                     {IsSignInForm ? "Sign In" : "Sign Up"}
                 </h1>

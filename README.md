@@ -34,6 +34,16 @@
 - TMBD image CDN url
 - Made the Browse page amazing with Tailwind CSS
 - Created custom hooks to fetch movies List
+- Added Multi language feature
+- Get open ai API call
+- GPT search API call
+- fetched movie suggested by GPT thorugh TMBD API
+- Created gptSlice added data
+- Reused movie list component to make  movie suggestion container
+- Memorization
+- Added .env file
+- Added .env to git ignore
+- Made our side Responsive
 
 # Features
 
