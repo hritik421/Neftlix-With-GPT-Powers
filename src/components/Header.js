@@ -13,6 +13,7 @@ const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const showGPT = useSelector((store) => store.gpt.showGptView);
+  const user = useSelector(store => store.user);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -61,10 +62,10 @@ const Header = () => {
         src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
         alt="Logo"
       />
-      <div className="p-4">
+      <div className="p-4 flex justify-between lg: justify-normal">
         {showGPT && (
           <select
-            className="py-1 px-4 mx-2 bg-purple-800 text-white rounded-md"
+            className="hidden lg:inline-block py-1 px-4 mx-2 bg-purple-800 text-white rounded-md"
             onChange={handleLanguageChanges}
           >
             {SUPPORTED_LANGUAGES.map((lang) => (
@@ -74,18 +75,22 @@ const Header = () => {
             ))}
           </select>
         )}
-        <button
+        {
+          user && <button
           onClick={handleGptSearch}
           className="py-1 px-4 mx-2 bg-purple-800 text-white rounded-md"
         >
           {showGPT ? "Homepage" : "GPT Search"}
         </button>
-        <button
-          onClick={handleSignOut}
-          className="py-1 px-4 bg-purple-800 text-white rounded-md"
-        >
-          Sign out
-        </button>
+        }
+        {
+          user && <button
+            onClick={handleSignOut}
+            className="py-1 px-4 bg-purple-800 text-white rounded-md"
+          >
+            Sign out
+          </button>
+        }
       </div>
     </div>
   );
